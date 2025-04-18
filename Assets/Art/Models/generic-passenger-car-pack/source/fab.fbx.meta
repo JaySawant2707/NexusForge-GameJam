@@ -3,7 +3,32 @@ guid: 97dadaeac4fb95348a01226681eec27f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 073f7f3d33732714789602b1fa62c4b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: ecf4b2a5dd4a0994fb6d886221e030d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Optics
+    second: {fileID: 2100000, guid: 768e2e8db0082ce409dc7c20c140f03a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wheek
+    second: {fileID: 2100000, guid: 8b97a243651292a49a5c419fc64af8d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wheel
+    second: {fileID: 2100000, guid: 7341288c4434f8849901fa25015f4942, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
