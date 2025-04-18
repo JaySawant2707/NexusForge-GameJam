@@ -1,16 +1,17 @@
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] float scoreMultiplier = 1.5f;
 
-    // Update is called once per frame
+    float score;
+
     void Update()
     {
-        
+        score += Time.time * scoreMultiplier;
+        scoreText.text = "Score : " + score.ToString("F0");
     }
 }

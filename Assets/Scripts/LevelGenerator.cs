@@ -7,20 +7,20 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] CameraController cameraController;
     [SerializeField] ScoreManager scoreManager;
     [SerializeField] Transform chunkParent;
-    [SerializeField] GameObject checkpointChunk;
+    // [SerializeField] GameObject checkpointChunk;
     [SerializeField] GameObject[] chunkPrefabs;
 
     [Header("Level Settings")]
-    [SerializeField] int checkpointInterval = 8;
+    // [SerializeField] int checkpointInterval = 8;
     [Tooltip("amount of chunks we start with")]
     [SerializeField] int startingChunkAmount = 12;
     [Tooltip("Don't change this value unless chunk prefab size reflects")]
     [SerializeField] float chunkLength = 10;
     [SerializeField] float moveSpeed = 10;
-    [SerializeField] float minMoveSpeed = 4;
-    [SerializeField] float maxMoveSpeed = 20;
-    [SerializeField] float minGravityZ = -20f;
-    [SerializeField] float maxGravityZ = -8f;
+    // [SerializeField] float minMoveSpeed = 4;
+    // [SerializeField] float maxMoveSpeed = 20;
+    // [SerializeField] float minGravityZ = -20f;
+    // [SerializeField] float maxGravityZ = -8f;
 
     int chunksSpawned;
 
@@ -36,22 +36,22 @@ public class LevelGenerator : MonoBehaviour
         MoveChunk();
     }
 
-    public void ChangeChunkMoveSpeed(float amount)
-    {
-        float newMoveSpeed = moveSpeed + amount;
-        newMoveSpeed = Mathf.Clamp(newMoveSpeed, minMoveSpeed, maxMoveSpeed);
+    // public void ChangeChunkMoveSpeed(float amount)
+    // {
+    //     float newMoveSpeed = moveSpeed + amount;
+    //     newMoveSpeed = Mathf.Clamp(newMoveSpeed, minMoveSpeed, maxMoveSpeed);
 
-        if (newMoveSpeed != moveSpeed)
-        {
-            moveSpeed = newMoveSpeed;
+    //     if (newMoveSpeed != moveSpeed)
+    //     {
+    //         moveSpeed = newMoveSpeed;
 
-            float newGravityZ = Physics.gravity.z - amount;
-            newGravityZ = Mathf.Clamp(newGravityZ, minGravityZ, maxGravityZ);
-            Physics.gravity = new Vector3(Physics.gravity.x, Physics.gravity.y, newGravityZ);
+    //         float newGravityZ = Physics.gravity.z - amount;
+    //         newGravityZ = Mathf.Clamp(newGravityZ, minGravityZ, maxGravityZ);
+    //         Physics.gravity = new Vector3(Physics.gravity.x, Physics.gravity.y, newGravityZ);
 
-            cameraController.ChangeCameraFOV(amount);
-        }
-    }
+    //         cameraController.ChangeCameraFOV(amount);
+    //     }
+    // }
 
     void SpawnStartingChunks()
     {
@@ -71,8 +71,8 @@ public class LevelGenerator : MonoBehaviour
         GameObject newChunkGO = Instantiate(chunkToSpawn, spawnPosition, Quaternion.identity, chunkParent);
         chunks.Add(newChunkGO);
 
-        Chunk newChunk = newChunkGO.GetComponent<Chunk>();
-        newChunk.Init(this, scoreManager);//Injecting dependency to Chunk class
+        // Chunk newChunk = newChunkGO.GetComponent<Chunk>();
+        // newChunk.Init(this, scoreManager);//Injecting dependency to Chunk class
         chunksSpawned++;
     }
 

@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class Chunk : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] GameObject fencePrefab;
-    [SerializeField] GameObject applePrefab;
-    [SerializeField] GameObject coinPrefab;
-    [Header("Chunk Settings")]
-    [SerializeField] float fenceSpawnChance = 0.6f;
-    [SerializeField] float appleSpawnChance = 0.3f;
-    [SerializeField] float coinSpawnChance = 0.5f;
-    [SerializeField] int maxCoinsToSpawn = 4;
-    [Tooltip("distance between two coins in a lane")]
-    [SerializeField] float coinSeperationDistance = 0.5f;
-    [SerializeField] float[] lanes = { -2.5f, 0f, 2 - 5f };
+    //[Header("References")]
+    //[SerializeField] GameObject fencePrefab;
+    //[SerializeField] GameObject applePrefab;
+    //[SerializeField] GameObject coinPrefab;
+    //[Header("Chunk Settings")]
+    //[SerializeField] float fenceSpawnChance = 0.6f;
+    //[SerializeField] float appleSpawnChance = 0.3f;
+    //[SerializeField] float coinSpawnChance = 0.5f;
+    //[SerializeField] int maxCoinsToSpawn = 4;
+    //[Tooltip("distance between two coins in a lane")]
+    //[SerializeField] float coinSeperationDistance = 0.5f;
+    //[SerializeField] float[] lanes = { -2.5f, 0f, 2 - 5f };
 
     List<int> avaliableLanes = new List<int> { 0, 1, 2 };
 
