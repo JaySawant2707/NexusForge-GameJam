@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: I_Electric_0_001
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_Parent: {fileID: 2100000, guid: 092d1ead685e38c448fcb6dd343f6838, type: 2}
+  m_Parent: {fileID: 2100000, guid: 7cb7a1f1dbd94ce4da85ffb354b33f58, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
