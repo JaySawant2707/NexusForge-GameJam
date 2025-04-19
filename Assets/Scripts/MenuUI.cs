@@ -1,9 +1,17 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuUI : MonoBehaviour
 {
-   public void StartGame()
+    [SerializeField] TextMeshProUGUI highScoreText;
+
+    void Start()
+    {
+        if (PlayerPrefs.HasKey("highscore"))
+            highScoreText.text = PlayerPrefs.GetFloat("highscore").ToString();
+    }
+    public void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

@@ -85,7 +85,7 @@ public class LevelGenerator : MonoBehaviour
         {
             chunkToSpawn = checkpointChunk;
         }
-        else if(chunksSpawned < startingChunkAmount)
+        else if(chunksSpawned < 1)
         {
             chunkToSpawn = startingChunk;
         }

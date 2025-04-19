@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
@@ -8,10 +7,24 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] float scoreMultiplier = 1.5f;
 
     float score;
+    bool canScore = true;
 
     void Update()
     {
-        score += Time.time * scoreMultiplier;
-        scoreText.text = "Score : " + score.ToString("F0");
+        if (canScore)
+        {
+            score += Time.time * scoreMultiplier;
+            scoreText.text = "Score : " + score.ToString("F0");
+        }
+    }
+
+    public float GetScore()
+    {
+        return score;
+    }
+
+    public void SetCanScore(bool value)
+    {
+        canScore = value;
     }
 }
