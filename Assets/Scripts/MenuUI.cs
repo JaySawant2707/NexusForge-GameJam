@@ -9,7 +9,7 @@ public class MenuUI : MonoBehaviour
     void Start()
     {
         if (PlayerPrefs.HasKey("highscore"))
-            highScoreText.text = PlayerPrefs.GetFloat("highscore").ToString();
+            highScoreText.text = "Highscore\n" + PlayerPrefs.GetFloat("highscore").ToString("F0");
     }
     public void StartGame()
     {

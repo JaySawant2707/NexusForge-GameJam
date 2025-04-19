@@ -899,7 +899,7 @@ MonoBehaviour:
   startingChunkAmount: 10
   chunkLength: 400
   moveSpeed: 20
-  moveSpeedMultiplier: 0.001
+  moveSpeedMultiplier: 0.005
 --- !u!4 &159802163
 Transform:
   m_ObjectHideFlags: 0
@@ -6952,7 +6952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1670302873}
-  scoreMultiplier: 1.5
+  scoreMultiplier: 0.5
 --- !u!4 &1265717926
 Transform:
   m_ObjectHideFlags: 0
