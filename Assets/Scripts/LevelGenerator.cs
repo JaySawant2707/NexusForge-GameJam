@@ -7,16 +7,18 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] CameraController cameraController;
     [SerializeField] ScoreManager scoreManager;
     [SerializeField] Transform chunkParent;
-    // [SerializeField] GameObject checkpointChunk;
+    [SerializeField] GameObject checkpointChunk;
+    [SerializeField] GameObject startingChunk;
     [SerializeField] GameObject[] chunkPrefabs;
 
     [Header("Level Settings")]
-    // [SerializeField] int checkpointInterval = 8;
+    [SerializeField] int checkpointInterval = 8;
     [Tooltip("amount of chunks we start with")]
     [SerializeField] int startingChunkAmount = 12;
     [Tooltip("Don't change this value unless chunk prefab size reflects")]
     [SerializeField] float chunkLength = 10;
     [SerializeField] float moveSpeed = 10;
+    [SerializeField] float moveSpeedMultiplier = 0.001f;
     // [SerializeField] float minMoveSpeed = 4;
     // [SerializeField] float maxMoveSpeed = 20;
     // [SerializeField] float minGravityZ = -20f;
@@ -66,7 +68,7 @@ public class LevelGenerator : MonoBehaviour
         float zPosition = CalculatePositionZ();
 
         Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y, zPosition);
-        GameObject chunkToSpawn = chunkPrefabs[Random.Range(0, chunkPrefabs.Length)];
+        GameObject chunkToSpawn = SelectChunkToSpawn();
         
         GameObject newChunkGO = Instantiate(chunkToSpawn, spawnPosition, Quaternion.identity, chunkParent);
         chunks.Add(newChunkGO);
@@ -76,20 +78,24 @@ public class LevelGenerator : MonoBehaviour
         chunksSpawned++;
     }
 
-    // private GameObject SelectChunkToSpawn()
-    // {
-    //     GameObject chunkToSpawn;
-    //     if (chunksSpawned % checkpointInterval == 0 && chunksSpawned != 0)
-    //     {
-    //         chunkToSpawn = checkpointChunk;
-    //     }
-    //     else
-    //     {
-    //         chunkToSpawn = chunkPrefabs[Random.Range(0, chunkPrefabs.Length)];
-    //     }
+    private GameObject SelectChunkToSpawn()
+    {
+        GameObject chunkToSpawn;
+        if (chunksSpawned % checkpointInterval == 0 && chunksSpawned != 0)
+        {
+            chunkToSpawn = checkpointChunk;
+        }
+        else if(chunksSpawned < startingChunkAmount)
+        {
+            chunkToSpawn = startingChunk;
+        }
+        else
+        {
+            chunkToSpawn = chunkPrefabs[Random.Range(0, chunkPrefabs.Length)];
+        }
 
-    //     return chunkToSpawn;
-    // }
+        return chunkToSpawn;
+    }
 
     float CalculatePositionZ()
     {
@@ -121,5 +127,6 @@ public class LevelGenerator : MonoBehaviour
                 SpawnChunk();
             }
         }
+        moveSpeed += moveSpeedMultiplier;
     }
 }

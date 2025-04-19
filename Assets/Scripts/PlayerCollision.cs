@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
@@ -8,14 +9,15 @@ public class PlayerCollision : MonoBehaviour
         {
             Debug.Log("Hit " + other.gameObject.name);
             Debug.Log("Game Over!");
+            GameManager.Instance.GameOver();
         }
    }
 
    void OnTriggerEnter(Collider other)
    {
-        if (other.gameObject.CompareTag("Collectible"))
+        if (other.gameObject.CompareTag("GravityTrigger"))
         {
-            Debug.Log("Collected " + other.gameObject.name);
+            //gravity change logic
         }
    }
 }
